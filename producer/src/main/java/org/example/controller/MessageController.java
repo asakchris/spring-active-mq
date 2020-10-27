@@ -29,8 +29,8 @@ public class MessageController {
   @ResponseStatus(HttpStatus.CREATED)
   public MessageVo sendMessage(@Valid @RequestBody MessageVo message) {
     log.info("Received message: {}", message);
-    jmsTemplate.convertAndSend(messageQueue, message.getMessage());
-    log.info("message posted successfully: {}", message.getMessage());
+    jmsTemplate.convertAndSend(messageQueue, message);
+    log.info("message posted successfully: {}", message);
     return message;
   }
 }
