@@ -7,3 +7,7 @@ spring:
     password: admin
     packages:
       trusted: org.example.model
+app:
+  message-queue:
+    name: message-queue
+    concurrency: 3

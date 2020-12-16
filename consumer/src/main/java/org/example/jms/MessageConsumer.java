@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class MessageConsumer {
-  @JmsListener(destination = "message-queue", concurrency = "5")
+  @JmsListener(destination = "${app.message-queue.name}", concurrency = "${app.message-queue.concurrency}")
   public void onMessage(MessageVo message) {
     log.info("Message received: {} ", message);
   }
